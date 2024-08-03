@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Congreso Comenio</title>
-    <meta property="og:title" content="Cincuentenario Comenio />
+    <meta property="og:title" content="Cincuentenario Comenio" />
     <meta property="og:description" content="Explora esta tarjeta interactiva que se voltea al hacer clic." />
     <meta property="og:image" content="https://congreso-comenio-8fw0m34lz.vercel.app//2.png" />
     <meta property="og:url" content="https://congreso-comenio-8fw0m34lz.vercel.app//" />
@@ -74,19 +74,13 @@
             padding: 10px 20px;
             font-size: 16px;
             color: white;
-            background-color: #d6006f; /* Initial color */
+            background-color: #21d8ba; /* Initial color */
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             font-family: 'Oswald', sans-serif;
             transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #21d8ba ;
-        }
-        .button:active {
-            background-color: #33ff49 ;
         }
     </style>
 </head>
@@ -105,14 +99,18 @@
     </div>
     <script>
         let currentRotation = 0;
+        let colorToggle = true;
+
         function toggleCard() {
             const cardInner = document.querySelector('.card-inner');
             const button = document.getElementById('actionButton');
             currentRotation = (currentRotation + 120) % 360;
             cardInner.style.transform = `rotateY(${currentRotation}deg)`;
-            button.style.backgroundColor = (currentRotation === 0) ? '#21d8ba ' : '#33ff49 ';
+            button.style.backgroundColor = colorToggle ? '#21d8ba' : '#33ff49';
+            colorToggle = !colorToggle;
         }
     </script>
 </body>
 </html>
+
 
